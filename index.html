@@ -7,6 +7,39 @@
 </head>
 <body>
     <body>
+        #blorg {
+        background-color: white;
+        height: 34rem;
+        aspect-ratio: 1;
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        translate: -50% -50%;
+        border-radius: 50%;
+        background: linear-gradient(to right, green, white);
+        opacity: 0.8;
+    }
+    #blur {
+        position: absolute;
+        z-index: 1;
+        backdrop-filter: blur(12vmax);
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    
+    .text-block {
+        position: relative;
+        width: 50%;
+        height: 50%;
+        margin: auto;
+        left: 0;
+        right: 0;
+        z-index: 12;
+    }
         <h1>Welcome to Wadiganda.com</h1>
         <h2>This is a safe and very secure website.</h2>
         <p><i>"The Godfather of Modern Day Website making."</i>
