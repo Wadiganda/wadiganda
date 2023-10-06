@@ -6,10 +6,63 @@
     <title>WADIGANDA</title>
 </head>
 <body>
-    <body>
-        #blorg {
+    <div id="blorg"></div>
+    <div id="blur"> </div>
+        <div class="text-block">
+            <h1>WADIGANDA.COM</h1>
+            <h1>Welcome to Wadiganda.com</h1>
+        <h2>This is a safe and very secure website.</h2>
+        <img src="https://ibb.co/LrhNJJR" />
+        <p><i>"The Godfather of Modern Day Website making."</i>
+        <p>Our name is <b>Bodhi Woll and Henry Foster</b>, we are the creators of the webiste. Here is some advice:</p>
+        <ul>
+          <li>water down the coffee</li>
+          <li>spin around</li>
+          <li>don't call the police</li>
+        </ul>
+        <p>This is just random text for now, I will change it later.</p>
+        <p>Check out this link <a href="https://youtu.be/IAgql5L1yrQ?si=6Gn9LU1NOIjKiOyC">Youtube Link</a> Its a cool video</p>
+        <button>Show Next Review</button>
+        </div>
+
+        <div class="blob-space">
+
+        </div>
+
+    <script>
+
+        const blorg = document.getElementById("blorg");
+
+        window.onpointermove = event => {
+            const { clientX, clientY } = event;
+
+            blorg.animate({
+                left: `${clientX}px`,
+                top: `${clientY}px`
+            }, {duration: 3000, fill: "forwards"});
+        }
+
+    </script>
+
+
+</body>
+</html>
+
+<style>
+    body {
+        background-color: black;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 41px;
+        overflow-x: hidden;
+        height: 200%;
+        width: 100%;
+
+        
+    }
+    #blorg {
         background-color: white;
-        height: 34rem;
+        height: 50rem;
         aspect-ratio: 1;
         position: absolute;
         left: 50%;
@@ -18,13 +71,16 @@
         border-radius: 50%;
         background: linear-gradient(to right, green, white);
         opacity: 0.8;
+        transition: colorswitch 11s ease-in-out infinite;
+        animation: colorswitch 11s ease-in-out infinite;
+        -webkit-animation: colorswitch 11s ease-in-out infinite;
     }
     #blur {
         position: absolute;
         z-index: 1;
-        backdrop-filter: blur(12vmax);
-        height: 100%;
-        width: 100%;
+        backdrop-filter: blur(15vmax);
+        height: 200%;
+        width: 200%;
         top: 0;
         left: 0;
         right: 0;
@@ -40,54 +96,14 @@
         right: 0;
         z-index: 12;
     }
-        <h1>Welcome to Wadiganda.com</h1>
-        <h2>This is a safe and very secure website.</h2>
-        <p><i>"The Godfather of Modern Day Website making."</i>
-        <p>My name is <b>Henry Foster</b>, I am the creator of the webiste. Here is some advice:</p>
-        <ul>
-          <li>water down the coffee</li>
-          <li>spin around</li>
-          <li>don't call the police</li>
-        </ul>
-        <p>This is just random text for now, I will change it later.</p>
-        <p>Check out this link <a href="https://youtu.be/IAgql5L1yrQ?si=6Gn9LU1NOIjKiOyC">Youtube Link</a> Its a cool video</p>
-        <button>Show Next Review</button>
-      </body>
-    
-    <div class="text-block">
-        <h1>WADIGANDA.COM</h1>
-    </div>
-
-    <div class="blob-space">
-
-    </div>
-</body>
-</html>
-
-<style>
-    body {
-        background-color: black;
-        color: rgb(255, 255, 255);
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 56px;
-        
-    }
-    .text-block {
-        position: relative;
-        width: 50%;
-        height: 50%;
-        margin: auto;
-        left: 0;
-        right: 0;
-    }
 
     .blob-space {
         display: flex;
         left: 0;
         right: 0;
         margin: auto;
-    -webkit-animation: morph 2s ease-in-out infinite;
-    animation-duration: 3s;
+    -webkit-animation: morph 8s ease-in-out infinite;
+    animation-duration: 8s;
     animation-delay: 0s;
     animation-iteration-count: infinite;
     animation-direction: normal;
@@ -96,15 +112,16 @@
     animation-name: morph;
     animation: morph 8s ease-in-out infinite;
     background-image: url(tapir.jpg);
-    background-position: 30%;
+    background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
     border: 3px solid white;
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    height: 50%;
+    height: 40%;
     position: absolute;
     transition: morph 1s ease-in-out;
-    width: 50%;
+    width: 40%;
+    z-index: 10;
    
 }
 
@@ -112,27 +129,56 @@
     0% {
         border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
         ;
-        border: 3px solid rgb(224, 4, 4);
+        border: 3px solid white;
     }
 
-    45% {
+    50% {
         border-radius: 30% 60% 70% 50% / 50% 60% 80% 70%;
         ;
-        border: 3px solid rgb(255, 251, 0);
-    }
-    75% {
-        border-radius: 30% 60% 70% 50% / 50% 60% 80% 70%;
-        ;
-        border: 3px solid rgb(25, 0, 255);
+        border: 3px solid white;
     }
 
     100% {
         border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
         ;
-        border: 3px solid rgb(255, 0, 0);
+        border: 3px solid white;
     }
 }
 
-
+@keyframes colorswitch {
+    0% {
+        background: linear-gradient(to right, green, white);
+        rotate: deg(30);
+    }
+    15% {
+        background: linear-gradient(to right, blue, white);
+        rotate: deg(30);
+    }
+    30% {
+        background: linear-gradient(to right, rgb(117, 39, 168), white);
+        rotate: deg(30);
+    }
+    45% {
+        background: linear-gradient(to right, purple, white);
+        rotate: deg(30);
+    }
+    60% {
+        background: linear-gradient(to right, pink, white);
+        rotate: deg(30);
+    }
+    75% {
+        background: linear-gradient(to right, red, white);
+        rotate: deg(30);
+    }
+    90% {
+        background: linear-gradient(to right, orange, white);
+        rotate: deg(30);
+    }
+    100% {
+        background: linear-gradient(to right, yellow, white);
+        rotate: deg(30);
+    }
+    
+}
 
 </style>
